@@ -1,0 +1,63 @@
+{
+    "type":"origins:action_over_time",
+    "entity_action":{
+       "type":"origins:and",
+       "actions":[
+          {
+             "type":"origins:execute_command",
+             "command":"function voidwalker:gravity_manipulation_particle_effects"
+          },
+          {
+             "type":"origins:execute_command",
+             "command":"tp @s ~ ~ ~ ~6 ~"
+          },
+          {
+             "type":"origins:area_of_effect",
+             "radius":10.0,
+             "shape":"cube",
+             "bientity_action":{
+                "type":"origins:target_action",
+                "action":{
+                   "type":"origins:apply_effect",
+                   "effects":[
+                      {
+                         "effect":"minecraft:slowness",
+                         "duration":200,
+                         "amplifier":5,
+                         "is_ambient":false,
+                         "show_particles":false,
+                         "show_icon":true
+                      },
+                      {
+                         "effect":"minecraft:levitation",
+                         "duration":200,
+                         "amplifier":0,
+                         "is_ambient":false,
+                         "show_particles":false,
+                         "show_icon":true
+                      }
+                   ]
+                }
+             },
+             "bientity_condition":{
+                "type":"origins:target_condition",
+                "condition":{
+                   "type":"origins:nbt",
+                   "nbt":"{Tags:[\"voidwalker_gravity_manipulation.actor\"]}",
+                   "inverted":true
+                }
+             },
+             "include_actor":false
+          }
+       ]
+    },
+    "rising_action":{
+       "type":"origins:delay",
+       "action":{
+          "type":"origins:execute_command",
+          "command":"kill @s"
+       },
+       "ticks":200
+    },
+    "interval":1
+}

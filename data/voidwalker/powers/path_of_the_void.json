@@ -1,0 +1,19 @@
+{
+    "name": "§dPath of the Void",
+	"description": "§fThe Path of the Void grants more durable skin, but with a cost of a diminished life force.",
+    "type": "origins:attribute",
+    "modifiers": [
+        {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -6.0,
+            "name": "Max Health Decreased"
+        },
+        {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 1.0,
+            "name": "Natural Armor"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "pack": {
+    "pack_format": 35,
+    "supported_formats": {
+      "min_inclusive": 18,
+      "max_inclusive": 35
+    },
+    "description": {
+      "text": "Manipulate space-time to your will!",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    }
+  }
+}

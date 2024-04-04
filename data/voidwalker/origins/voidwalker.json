@@ -1,0 +1,19 @@
+{
+	"powers": [
+		"voidwalker:void_energy",
+		"voidwalker:blink",
+		"voidwalker:levitation",
+		"voidwalker:entropic_bloom",
+		"voidwalker:gravity_manipulation",
+		"voidwalker:chaotic_accelerant",
+		"voidwalker:path_of_the_void",
+		"voidwalker:field_forces",
+		"voidwalker:no_fall",
+		"voidwalker:authors"
+	],
+	"icon": "minecraft:crying_obsidian",
+	"order": 10,
+	"impact": 3,
+	"name": "§5Voidwalker§r",
+	"description": "§fVoidwalkers are a human subspecies infused with Void Energy. They have the capability to cultivate, manifest and control Void Energy after acting as a battery and a conduit for said energy.§r"
+}

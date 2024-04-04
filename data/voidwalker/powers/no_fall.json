@@ -1,0 +1,9 @@
+{
+	"name": "§dActive Ability Passives",
+	"description": "§fBlink will cause temporary blindness whilst shifting through space-time. Using Gravity Manipulation, you will be pulled down by the singularity you created, temporarily inhibiting movement. Using Chaotic Accelerant will overcharge your body with Void energy. This overflow of Void energy constantly is being excreted from your body causing a purple glow around yourself. It will also act as a lens over your eyes.",
+    "type": "origins:invulnerability",
+	"damage_condition": {
+		"type": "origins:name",
+		"name": "fall"
+	}
+}

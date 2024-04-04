@@ -1,0 +1,203 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:raycast",
+                "distance": 16.0,
+                "block": true,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "command_at_hit": "tp @s ~ ~ ~",
+                "command_hit_offset": 0,
+                "command_step":1.00,
+                "command_along_ray_only_on_hit":false
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute if entity @e[tag = voidwalker_blink.actor, distance = ..0.8] run tag @s add voidwalker_blink.target_and_actor.in_same_space"
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:on_block",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:in_block",
+                            "block_condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:lava"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:fire"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:soul_fire"
+                                    }
+                                ]
+                            },
+                            "inverted": false
+                        },
+                        {
+                            "type": "origins:on_block",
+                            "block_condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:lava"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:fire"
+                                    },
+                                    {
+                                        "type": "origins:block",
+                                        "block": "minecraft:soul_fire"
+                                    }
+                                ]
+                            },
+                            "inverted": false
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove voidwalker_blink.target.safe"
+                },
+                "else_action": {
+                    "type": "origins:execute_command",
+                    "command": "tag @s add voidwalker_blink.target.safe"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:nbt",
+                            "nbt": "{Tags: [\"voidwalker_blink.target.safe\"]}"
+                        },
+                        {
+                            "type": "origins:nbt",
+                            "nbt": "{Tags: [\"voidwalker_blink.target_and_actor.in_same_space\"]}",
+                            "inverted": true
+                        }
+                    ] 
+                },
+                "if_action": {
+                    "type": "origins:area_of_effect",
+                    "radius": 64.0,
+                    "shape": "cube",
+                    "bientity_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:spawn_particles",
+                                            "particle":"minecraft:portal",
+                                            "count": 15,
+                                            "speed": 1.0,
+                                            "force": false,
+                                            "spread": {
+                                                "x": 0.375,
+                                                "y": 0.375,
+                                                "z": 0.375
+                                            },
+                                            "offset_y": 1.0
+                                        },
+                                        {
+                                            "type": "origins:spawn_particles",
+                                            "particle":"minecraft:flash",
+                                            "count": 1,
+                                            "speed": 0.0,
+                                            "force": false,
+                                            "spread": {
+                                                "x": 0.00,
+                                                "y": 0.00,
+                                                "z": 0.00
+                                            },
+                                            "offset_y": 1.0
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "tp @e[tag=voidwalker_blink.actor] ~ ~ ~"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:spawn_particles",
+                                            "particle":"minecraft:portal",
+                                            "count": 15,
+                                            "speed": 1.0,
+                                            "force": false,
+                                            "spread": {
+                                                "x": 0.375,
+                                                "y": 0.375,
+                                                "z": 0.375
+                                            },
+                                            "offset_y": 1.0
+                                        },
+                                        {
+                                            "type": "origins:play_sound",
+                                            "sound": "minecraft:entity.illusioner.mirror_move",
+                                            "volume": 1.00,
+                                            "pitch": 0.30
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{Tags: [\"voidwalker_blink.actor\"]}"
+                        }
+                    },
+                    "include_actor":false
+                },
+                "else_action": {
+                    "type": "origins:execute_command",
+                    "command": "title @a[tag = voidwalker_blink.actor] actionbar {\"text\": \"Cannot teleport! Destination is not safe\", \"color\": \"red\"}"
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute if entity @s[tag = voidwalker_blink.target_and_actor.in_same_space] run title @a[tag = voidwalker_blink.actor] actionbar {\"text\": \"Cannot teleport! Already at the destination\", \"color\": \"red\"}"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tag @e remove voidwalker_blink.actor"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "kill @s"
+            }
+        ]
+    },
+    "interval": 1
+}

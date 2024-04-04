@@ -1,0 +1,11 @@
+{
+    "name": "§dField Forces",
+    "description": "§fDue to the nature of The Voidwalker, you no longer feel a need to use a shield, instead of focusing more on dodges.",
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:shields"
+      }
+    }
+  }
