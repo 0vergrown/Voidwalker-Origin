@@ -30,14 +30,12 @@
                 "pitch":0.50
              },
              {
-                "type":"origins:spawn_entity",
-                "entity_type":"minecraft:armor_stand",
-                "tag":"{Invisible:1b,Invulnerable:1b,PersistenceRequired:1b,Marker:1b,DisabledSlots:4144959}",
-                "entity_action":{
-                   "type":"origins:grant_power",
-                   "power":"voidwalker:gravity_manipulation_armor_stand_effects",
-                   "source":"voidwalker:gravity_manipulation_armor_stand_effects"
-                }
+               "type": "origins:execute_command",
+					"command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b,Tags:[\"voidwalker_gravity_manipulation.summon\"],DisabledSlots:4144959}"
+             },
+             {
+               "type": "origins:execute_command",
+               "command": "power grant @e[type=minecraft:armor_stand,tag=voidwalker_gravity_manipulation.summon,sort=nearest,limit=1] voidwalker:gravity_manipulation_armor_stand_effects"
              },
              {
                 "type":"origins:apply_effect",

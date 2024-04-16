@@ -1,6 +1,6 @@
 {
     "name":"§dVoid Energy",
-    "description":"§fYou charge your body with the essence of the Void. This Void Energy is then used for all of your abilites.",
+    "description":"§fYou charge your body with the essence of the Void. This Void Energy is then used for all of your abilities.",
     "type":"origins:multiple",
     "resource":{
        "type":"origins:resource",
