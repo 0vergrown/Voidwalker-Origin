@@ -23,7 +23,7 @@ Description: Voidwalkers are a human subspecies infused with Void Energy. They h
 *Neutral* 🟡:
 - **Void Energy**: You charge your body with the essence of the Void. This Void Energy is then used for all of your abilities.
 - **Path of the Void**: The Path of the Void grants more durable skin, but with a cost of a diminished life force.
--- **Active Ability Passives**: Blink will cause temporary blindness whilst shifting through space-time. Using Gravity Manipulation, you will be pulled down by the singularity you created, temporarily inhibiting movement. Using Chaotic Accelerant will overcharge your body with Void energy. This overflow of Void energy constantly is being excreted from your body causing a purple glow around yourself. It will also act as a lens over your eyes.
+- **Active Ability Passives**: Blink will cause temporary blindness whilst shifting through space-time. Using Gravity Manipulation, you will be pulled down by the singularity you created, temporarily inhibiting movement. Using Chaotic Accelerant will overcharge your body with Void energy. This overflow of Void energy constantly is being excreted from your body causing a purple glow around yourself. It will also act as a lens over your eyes.
 
 *Negative* 🔴:
 - **Field Forces**: Due to the nature of The Voidwalker, you no longer feel a need to use a shield, instead of focusing more on dodges.
