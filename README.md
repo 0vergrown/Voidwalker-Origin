@@ -9,9 +9,9 @@
 
 **Origin Detail:**
 
-Icon: Crying Obsidian <br />
-Impact: 🔴🔴🔴 <br />
-Description: Voidwalkers are a human subspecies infused with Void Energy. They have the capability to cultivate, manifest and control Void Energy after acting as a battery and a conduit for said energy.
+**Icon**: Crying Obsidian
+**Impact**: 🔴🔴🔴
+**Description**: Voidwalkers are a human subspecies infused with Void Energy. They have the capability to cultivate, manifest and control Void Energy after acting as a battery and a conduit for said energy.
 
 *Positive* 🟢:
 - **Blink**: You can slip through space-time, at will, and appear a short distance away. (Primary)
